@@ -1,0 +1,18 @@
+# installation
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip awscliv2.zip
+sudo ./aws/install
+
+# configure credential keys
+aws configure
+# -> paste key ID
+# -> paste access key
+# regiont and output format can be default
+
+# EKS
+## get EKS cluster status
+aws eks --region <region> describe-cluster --name <cluster_name>
+
+# edit kube cofiguration
+## go to the ~/.kube and run:
+aws eks --region <region> update-kubeconfig --name <cluster_name>
